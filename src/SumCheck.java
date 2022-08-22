@@ -1,3 +1,9 @@
+/******************************************************************************************************
+ * 
+ * This is a demonstration of enhancing an algorithm to improve solution performance.
+ * 
+ */
+
 import java.util.HashMap;
 import java.util.Map;
 
