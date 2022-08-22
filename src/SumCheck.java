@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 
 public class SumCheck {
 
@@ -6,7 +8,6 @@ public class SumCheck {
 		int sumTarget = 9;
 		
 		SumCheck check = new SumCheck();
-
 		int[] solution = check.twoSum(searchIntegers, sumTarget);
 		
 		if (solution != null) {
@@ -29,6 +30,20 @@ public class SumCheck {
 		return null;
 	}
 
+	public int[] twoSumEnhanced(int[]searchArray, int target) {	
+		System.out.println("twoSumEnhanced");
+		Map<Integer, Integer> complements = new HashMap<>();
+		for (int i=0; i<searchArray.length; i++) {
+			Integer complementIndex = complements.get(searchArray[i]);
+			if (complementIndex != null ) {
+				return new int[] {i, complementIndex};
+			}
+			
+			complements.put(target - searchArray[i], i);
+		}
+		
+		return null;
+	}
 	
 	
 }
