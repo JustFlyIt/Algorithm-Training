@@ -11,9 +11,9 @@
  * The difference between the two methods is that the first method, twoSum, is very slow.  The second
  * method, twoSumEnhanced is extremely fast.
  * 
- * The first method, twoSum, uses two linear searches two search for the missing compoonent.  This
+ * The first method, twoSum, uses two linear searches two search for the missing component.  This
  * is manifested in the use of two for loops that result in a time complexity of Big O equals n 
- * squared (quadractic).
+ * squared (quadratic).
  * 
  * The second method, twoSumEnhanced removes the nested for loop and provides a solution that only
  * iterates the search array one time.  This provides a time complexity of Big O equals n.
