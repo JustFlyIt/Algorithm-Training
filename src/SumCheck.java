@@ -10,6 +10,7 @@ import java.util.Map;
 public class SumCheck {
 
 	public static void main(String[] args) {
+		System.out.println("Starting SubCheck.main...");
 		int[] searchIntegers = {5, 6, 2, 1, 7, 9, 12, 43, 56, 3, 54, 100, 40};
 		int sumTarget = 9;
 		
