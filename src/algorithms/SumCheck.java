@@ -1,3 +1,4 @@
+package algorithms;
 /******************************************************************************************************
  * 
  * August 23, 2022
@@ -45,6 +46,7 @@ public class SumCheck {
 
 	public static void main(String[] args) {
 		System.out.println("Starting SubCheck.main...");
+		System.out.println();
 		int[] searchIntegers = {5, 6, 2, 1, 7, 9, 12, 43, 56, 3, 54, 100, 40};
 		int sumTarget = 9;
 		
@@ -59,7 +61,9 @@ public class SumCheck {
 		}
 	}
 	
+	// Simple solution but extremely poor performance
 	public int[] twoSum(int[]searchArray, int target) {	
+		System.out.println("twoSum");
 		for (int i=0; i<searchArray.length; i++) {
 			for (int j=i+1; j<searchArray.length; j++ ) {
 				if (searchArray[i] + searchArray[j] == target) {
@@ -71,20 +75,27 @@ public class SumCheck {
 		return null;
 	}
 
+	// Small increase in complexity provided a huge increase in performance
 	public int[] twoSumEnhanced(int[]searchArray, int target) {	
 		System.out.println("twoSumEnhanced");
 		Map<Integer, Integer> complements = new HashMap<>();
 		for (int i=0; i<searchArray.length; i++) {
+			// Check complements for the current search array value; If found
+			// a previous check has determine that it is the match for the
+			// trigger value complement.
 			Integer complementIndex = complements.get(searchArray[i]);
 			if (complementIndex != null ) {
 				return new int[] {i, complementIndex};
 			}
 			
+			// Put what is needed to meet the target at the index of the current value
+			// Then the algorithm will 
 			complements.put(target - searchArray[i], i);
+			
+			// TODO: CAN PERFORMANCE BE IMPROVED BY NOT SAVING NEGATIVE VALUES PRODUCED BY
+			// target - searchArray[i]
 		}
 		
 		return null;
 	}
-	
-	
 }
