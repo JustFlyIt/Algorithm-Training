@@ -14,6 +14,7 @@ public class KadaneExample {
 	}
 	
 	public static int basicSolution(int[] input) {
+		// O(n2)
 		int maxSum = input[0];
 		int currentSum = 0;
 		
@@ -30,10 +31,44 @@ public class KadaneExample {
 		return maxSum;
 	}
 	
-	public static void workTheExample(int[] input) {
+	public static int kadaneSolution(int[] input) {
+		// O(n)
+		int maxSum = input[0];
+		int currentSum = 0;
+		
+		for(int i=0; i<=input.length-1; i++) {
+			
+			if (currentSum < 0)
+				currentSum = 0;
+			
+			currentSum += input[i];
+			
+			if (maxSum < currentSum)
+				maxSum = currentSum;
+		}
+				
+		return maxSum;
+	}
+	
+	public static void workTheExample(int[] input, int x) {
+		
+		int answer = 0;
 		
 		printInput(input);
-		System.out.println("The answer for the input array is: " + basicSolution(input));
+		
+		switch(x) {
+			case 1:
+				answer = basicSolution(input);
+				break;
+			case 2:
+				answer = kadaneSolution(input);
+				break;
+			default:
+				System.out.println("Valid Solution Not Specified");
+				return;
+		}
+		
+		System.out.println("The answer for the input array is: " + answer);
 		
 	}
 
@@ -49,7 +84,7 @@ public class KadaneExample {
 		int[] input2 = { 4, -1, 2, -7, 3, 4};
 		int[] input3 = { -4, -1, -2, -7, -3, -4};
 		
-		workTheExample(input3);
+		workTheExample(input3, 2);
 
 	}
 
