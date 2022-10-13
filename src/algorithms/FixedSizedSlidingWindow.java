@@ -3,7 +3,7 @@ package algorithms;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BasicSlidingWindow {
+public class FixedSizedSlidingWindow {
 	
 	public enum solutionOptions { bruteForce, mapping };
 	

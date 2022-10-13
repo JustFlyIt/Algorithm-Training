@@ -24,8 +24,8 @@ public class VariableSizedSlidingWindow {
 		int ansLength = 0;
 		
 		for(int L=0; L<=input.length-1; L++) {
-			if ((L + k) < input.length)
-				checkLimit = (L + k) - 1;
+			if ((L + target) < input.length)
+				checkLimit = (L + target) - 1;
 			else 
 				checkLimit = input.length-1;
 			
@@ -46,7 +46,7 @@ public class VariableSizedSlidingWindow {
 		for(int R=0; R<=input.length-1; R++) {
 			// We only care about the values within the current window.  If we have looked at all of the  values
 			// in the window then we will remove the left hand element of the window and shift right.
-			if ((R - L + 1) > k) {
+			if ((R - L + 1) > target) {
 				windowMap.remove(input[L]);
 				L++;
 			}
