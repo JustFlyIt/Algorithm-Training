@@ -18,7 +18,7 @@ public class FixedSizedSlidingWindow {
 		System.out.println();
 	}
 	
-	public static boolean bruteForceSlidingWindow(int[] input, int k) {
+	public static boolean basicForceSlidingWindow(int[] input, int k) {
 		// O(n2)
 		int checkLimit = 0;
 		
@@ -38,7 +38,7 @@ public class FixedSizedSlidingWindow {
 	}
 	
 	public static boolean hashSlidingWindowSolution(int[] input, int k) {
-		System.out.println("hashSlidingWindowSolution");
+		System.out.println("hashSlidingWindowSolution\n");
 		Map<Integer, Integer> windowMap = new HashMap<>();
 		int L = 0;
 		
@@ -65,12 +65,11 @@ public class FixedSizedSlidingWindow {
 	}
 	
 	public static void workTheExample(int[] inputArray, solutionOptions option, int windowSize) {
-		
 		printInputArray(inputArray);
 		
 		switch(option) {
 			case bruteForce:
-				System.out.println("There are two elements within a window of size k " + "(" + windowSize + ") that are equal: " + bruteForceSlidingWindow(inputArray, windowSize));
+				System.out.println("There are two elements within a window of size k " + "(" + windowSize + ") that are equal: " + basicForceSlidingWindow(inputArray, windowSize));
 				break;
 			case mapping:
 				System.out.println("There are two elements within a window of size k " + "(" + windowSize + ") that are equal: " + hashSlidingWindowSolution(inputArray, windowSize));
@@ -82,12 +81,13 @@ public class FixedSizedSlidingWindow {
 	}
 
 	public static void main(String[] args) {
-		//int[] input1 = { 1, 2, 3, 2, 3, 3};
-		//int[] input2 = { 1, 2, 3, 5, 5, 5};
-		int[] input3 = { 1, 2, 3, 4, 5, 6};
+		System.out.println("Sliding Window Example...\n");
+		//int[] input = { 1, 2, 3, 2, 3, 3};
+		int[] input = { 1, 2, 3, 5, 5, 5};
+		//int[] input = { 1, 2, 3, 4, 5, 6};
 		
 		int windowSize = 2;
 		
-		workTheExample(input3, solutionOptions.mapping, windowSize);
+		workTheExample(input, solutionOptions.mapping, windowSize);
 	}
 }
