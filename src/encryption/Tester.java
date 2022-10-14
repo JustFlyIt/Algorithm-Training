@@ -5,7 +5,7 @@ import util.FileAsStringReader;
 
 public class Tester {
 
-	private enum solutionOptions { simpleText, textFile };
+	private enum solutionOptions { simpleText, dataFile };
 	
 	public static void workTheExample(String input, solutionOptions option) {
 	
@@ -41,7 +41,7 @@ public class Tester {
 		            System.out.println("Encryption Overhead Percentage: " + defaultFormat.format(percentageEncryptedOverhead));
 
 					break;
-				case textFile:
+				case dataFile:
 					System.out.println("Text File Encryption Example...");
 					System.out.println("Test Input file: " + input);
 
@@ -68,8 +68,8 @@ public class Tester {
 	}
 
 	public static void main(String[] args) {
-    	workTheExample("Test StringTest StringTest StringTest StringTest String", solutionOptions.simpleText);
-    	//workTheExample("C:\\Users\\dsnyder\\git\\JavaNotions\\src\\encryption\\sample-2mb-text-file.txt", solutionOptions.textFile);
-    	//workTheExample("C:\\Users\\dsnyder\\git\\JavaNotions\\src\\encryption\\PU Device DT Chat Setup V1.mp4", solutionOptions.textFile);
+    	//workTheExample("Test StringTest StringTest StringTest StringTest String", solutionOptions.simpleText);
+    	//workTheExample("C:\\Users\\dsnyder\\git\\JavaNotions\\src\\encryption\\sample-2mb-text-file.txt", solutionOptions.simpleText);
+    	workTheExample("C:\\Users\\dsnyder\\git\\JavaNotions\\src\\encryption\\PU Device DT Chat Setup V1.mp4", solutionOptions.dataFile);
     }
 }
