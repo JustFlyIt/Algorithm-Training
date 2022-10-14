@@ -55,8 +55,6 @@ public class KadaneExample {
 		int maxSum = input[0];
 		int currentSum = 0;
 		int L = 0;
-		int maxL = 0;
-		int maxR = 0;
 		
 		SlidingWindowAnswer ans = new SlidingWindowAnswer();
 		
@@ -80,9 +78,6 @@ public class KadaneExample {
 	}
 	
 	public static void workTheExample(int[] input, int x) {
-		
-		int answer = 0;
-		
 		printInput(input);
 		
 		switch(x) {
@@ -106,17 +101,17 @@ public class KadaneExample {
 
 	public static void main(String[] args) {
 		@SuppressWarnings("unused")
-		int[] input1 = {
+		int[] input = {
 						1, 4, 23, -9, 12, 24, 55, 1, 2, 3, 5, -4, 0, -5, 63, -100, 2, 5, 6, 8,
 						1, 4, 23, -9, 12, 24, 55, 1, 2, 3, 5, -4, 1, -5, 63, -100, 2, 5, 6, 8,
 						1, 4, 23, -9, 12, 24, 55, 1, 2, 3, 5, -4, 2, -5, 63, -100, 2, 5, 6, 8,
 						1, 4, 23, -9, 12, 24, -55, 1, 2, 3, 5, -4, 3, -5, 63, -100, 2, 5, 6, 8,
 						1, 4, 23, -9, 12, 24, -55, 1, 2, 3, 5, -4, 4, -5, 63, -100, 2, 5, 6, 8
 				       };
-		int[] input2 = { 4, -1, 2, -7, 3, -4};
-		int[] input3 = { -4, -1, -2, -7, -3, -4};
+		//int[] input = { 4, -1, 2, -7, 3, -4};
+		//int[] input = { -4, -1, -2, -7, -3, -4};
 		
-		workTheExample(input1, 3);
+		workTheExample(input, 3);
 
 	}
 	

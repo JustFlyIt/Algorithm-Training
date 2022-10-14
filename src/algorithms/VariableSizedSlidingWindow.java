@@ -21,7 +21,6 @@ public class VariableSizedSlidingWindow {
 	public static int simpleVariableSlidingWindow(int[] input, int target) {
 		// O(n)
 		int checkLimit = 0;
-		int ansLength = 0;
 		
 		for(int L=0; L<=input.length-1; L++) {
 			if ((L + target) < input.length)
@@ -84,12 +83,10 @@ public class VariableSizedSlidingWindow {
 
 	public static void main(String[] args) {
 		@SuppressWarnings("unused")
-		int[] input1 = { 1, 2, 3, 2, 3, 3};
-		int[] input2 = { 1, 2, 3, 5, 5, 5};
-		int[] input3 = { 1, 2, 3, 4, 5, 6};
+		//int[] input = { 1, 2, 3, 2, 3, 3};
+		//int[] input = { 1, 2, 3, 5, 5, 5};
+		int[] input = { 1, 2, 3, 4, 5, 6};
 		
-		int windowSize = 2;
-		
-		workTheExample(input3, solutionOptions.mapping);
+		workTheExample(input, solutionOptions.mapping);
 	}
 }

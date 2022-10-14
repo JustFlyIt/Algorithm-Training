@@ -22,8 +22,8 @@ public class AES {
     private final int KEY_SIZE = 256;
     private final int T_LEN = 128;
     private Cipher encryptionCipher;
-    private static final String ALGORITHM1 = "AES";
-    private static final String ALGORITHM2 = "AES/GCM/NoPadding";
+    //private static final String ALGORITHM = "AES";
+    private static final String ALGORITHM = "AES/GCM/NoPadding";
 
     public void init() throws Exception {
         KeyGenerator generator = KeyGenerator.getInstance("AES");
@@ -33,7 +33,7 @@ public class AES {
 
     public String encrypt(String message) throws Exception {
         byte[] messageInBytes = message.getBytes();
-        encryptionCipher = Cipher.getInstance(ALGORITHM2);
+        encryptionCipher = Cipher.getInstance(ALGORITHM);
         encryptionCipher.init(Cipher.ENCRYPT_MODE, key);
         byte[] encryptedBytes = encryptionCipher.doFinal(messageInBytes);
         return encode(encryptedBytes);
