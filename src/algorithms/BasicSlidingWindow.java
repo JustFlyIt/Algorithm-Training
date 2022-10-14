@@ -34,27 +34,8 @@ public class BasicSlidingWindow {
 		return maxSum;
 	}
 	
-	public static int kadaneSolution(int[] input) {
-		// O(n)
-		int maxSum = input[0];
-		int currentSum = 0;
-		
-		for(int i=0; i<=input.length-1; i++) {
-			
-			if (currentSum < 0)
-				currentSum = 0;
-			
-			currentSum += input[i];
-			
-			if (maxSum < currentSum)
-				maxSum = currentSum;
-		}
-				
-		return maxSum;
-	}
-	
-	public static boolean hashSlidingWindowSolution(int[] input, int k) {
-		System.out.println("hashSlidingWindowSolution");
+	public static boolean mappingSolution(int[] input, int k) {
+		System.out.println("mappingSolution");
 		Map<Integer, Integer> windowMap = new HashMap<>();
 		int L = 0;
 		
@@ -64,7 +45,6 @@ public class BasicSlidingWindow {
 				windowMap.remove(input[L]);
 				L++;
 			}
-			
 			
 			if (windowMap.containsValue(input[R])) {
 				return true;
@@ -85,17 +65,12 @@ public class BasicSlidingWindow {
 				System.out.println("The answer for the input array is: " + basicSolution(input));
 				break;
 			case 2:
-				System.out.println("The answer for the input array is: " + kadaneSolution(input));
-				break;
-			case 3:
-				System.out.println("There are two elements within a window of size k that are equal: " +  hashSlidingWindowSolution(input, 2));
+				System.out.println("There are two elements within a window of size k that are equal: " +  mappingSolution(input, 2));
 				break;
 			default:
 				System.out.println("Valid Solution Not Specified");
 				return;
 		}
-		
-		
 	}
 
 	public static void main(String[] args) {
@@ -103,6 +78,6 @@ public class BasicSlidingWindow {
 		//int[] input = { 1, 2, 3, 5, 5, 5};
 		//int[] input = { 1, 2, 3, 4, 5, 6};
 		
-		workTheExample(input, 3);
+		workTheExample(input, 2);
 	}
 }

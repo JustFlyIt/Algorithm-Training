@@ -18,7 +18,7 @@ public class FixedSizedSlidingWindow {
 		System.out.println();
 	}
 	
-	public static boolean basicForceSlidingWindow(int[] input, int k) {
+	public static boolean basicSolution(int[] input, int k) {
 		// O(n2)
 		int checkLimit = 0;
 		
@@ -37,8 +37,8 @@ public class FixedSizedSlidingWindow {
 		return false;
 	}
 	
-	public static boolean hashSlidingWindowSolution(int[] input, int k) {
-		System.out.println("hashSlidingWindowSolution\n");
+	public static boolean mappingSolution(int[] input, int k) {
+		System.out.println("mappingSolution\n");
 		Map<Integer, Integer> windowMap = new HashMap<>();
 		int L = 0;
 		
@@ -69,10 +69,10 @@ public class FixedSizedSlidingWindow {
 		
 		switch(option) {
 			case bruteForce:
-				System.out.println("There are two elements within a window of size k " + "(" + windowSize + ") that are equal: " + basicForceSlidingWindow(inputArray, windowSize));
+				System.out.println("There are two elements within a window of size k " + "(" + windowSize + ") that are equal: " + basicSolution(inputArray, windowSize));
 				break;
 			case mapping:
-				System.out.println("There are two elements within a window of size k " + "(" + windowSize + ") that are equal: " + hashSlidingWindowSolution(inputArray, windowSize));
+				System.out.println("There are two elements within a window of size k " + "(" + windowSize + ") that are equal: " + mappingSolution(inputArray, windowSize));
 				break;
 			default:
 				System.out.println("Valid Solution Not Specified");
