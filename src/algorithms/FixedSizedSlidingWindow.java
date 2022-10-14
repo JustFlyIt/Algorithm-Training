@@ -82,7 +82,6 @@ public class FixedSizedSlidingWindow {
 	}
 
 	public static void main(String[] args) {
-		@SuppressWarnings("unused")
 		//int[] input1 = { 1, 2, 3, 2, 3, 3};
 		//int[] input2 = { 1, 2, 3, 5, 5, 5};
 		int[] input3 = { 1, 2, 3, 4, 5, 6};

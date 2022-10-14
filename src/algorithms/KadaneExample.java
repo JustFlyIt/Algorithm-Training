@@ -100,7 +100,6 @@ public class KadaneExample {
 	}
 
 	public static void main(String[] args) {
-		@SuppressWarnings("unused")
 		int[] input = {
 						1, 4, 23, -9, 12, 24, 55, 1, 2, 3, 5, -4, 0, -5, 63, -100, 2, 5, 6, 8,
 						1, 4, 23, -9, 12, 24, 55, 1, 2, 3, 5, -4, 1, -5, 63, -100, 2, 5, 6, 8,
