@@ -28,10 +28,6 @@ public class BasicVariableLengthSlidingWindow {
 			
 			if (length < R - L + 1)
 				length = R - L + 1;
-			
-			if (input[L] == 1)
-				count++;
-
 		}
 			   
 		return length;
