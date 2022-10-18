@@ -18,29 +18,23 @@ public class BasicVariableLengthSlidingWindow {
 	
 	public static int basicSolution(int[] input) {
 		// O(n)
-		int longestArrayLength = 0;
-		int R = 0;
-		
-		for(int L=0; L<=input.length-1; L++) {
-			if (input[L] == input[R]) {
-				longestArrayLength++;
-			}
+		int length = 0;
+		int L = 0;
+		int count = 0;
+			    
+		for (int R = 0; R<=input.length-1; R++) {
+			if (input[L] != input[R])
+				L = R; 
 			
-			R = L + 1;
-			while (R < input.length-1) {
-				R++;
-				if (input[L] == input[R]) {
-					longestArrayLength++;
-				} else {
-					longestArrayLength--;
-					L = R;
-					break;
-				}
-			}
+			if (length < R - L + 1)
+				length = R - L + 1;
 			
+			if (input[L] == 1)
+				count++;
+
 		}
-				
-		return longestArrayLength;
+			   
+		return length;
 	}
 	
 	public static boolean mappingSolution(int[] input) {
@@ -66,7 +60,7 @@ public class BasicVariableLengthSlidingWindow {
 	}
 
 	public static void main(String[] args) {
-		int[] input = { 4, 2, 2, 2, 2, 2, 3, 3, 3};
+		int[] input = { 4, 2, 2, 2, 2, 2, 3, 3, 3, 1, 1, 1, 1, 1, 1, 1};
 		//int[] input = { 1, 2, 3, 5, 5, 5};
 		//int[] input = { 1, 2, 3, 4, 5, 6};
 		
