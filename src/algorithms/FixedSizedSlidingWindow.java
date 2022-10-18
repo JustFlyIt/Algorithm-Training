@@ -19,7 +19,7 @@ public class FixedSizedSlidingWindow {
 	}
 	
 	public static boolean basicSolution(int[] input, int k) {
-		// O(n2)
+		// O(n*k)
 		int checkLimit = 0;
 		
 		for(int L=0; L<=input.length-1; L++) {
