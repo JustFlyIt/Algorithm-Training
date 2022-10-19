@@ -3,18 +3,9 @@ package algorithms;
 import java.util.HashMap;
 import java.util.Map;
 
+import util.PrintSupport;
+
 public class BasicSlidingWindow {
-	
-	public static void printInput(int[] input) {
-		for (int i=0; i<input.length; i++) {
-			if (i==0)
-				System.out.print("Input: " + input[i]);
-			else
-				System.out.print(", " + input[i]);
-		}
-		
-		System.out.println();
-	}
 	
 	public static int basicSolution(int[] input) {
 		// O(n2)
@@ -58,7 +49,7 @@ public class BasicSlidingWindow {
 	
 	public static void workTheExample(int[] input, int x) {
 		
-		printInput(input);
+		PrintSupport.printArray(input);
 		
 		switch(x) {
 			case 1:

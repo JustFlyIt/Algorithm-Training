@@ -3,20 +3,11 @@ package algorithms;
 import java.util.HashMap;
 import java.util.Map;
 
+import util.PrintSupport;
+
 public class FixedSizedSlidingWindow {
 	
 	public enum solutionOptions { bruteForce, mapping };
-	
-	public static void printInputArray(int[] inputArray) {
-		for (int i=0; i<inputArray.length; i++) {
-			if (i==0)
-				System.out.print("Input Array: " + inputArray[i]);
-			else
-				System.out.print(", " + inputArray[i]);
-		}
-		
-		System.out.println();
-	}
 	
 	public static boolean basicSolution(int[] input, int k) {
 		// O(n*k)
@@ -65,7 +56,7 @@ public class FixedSizedSlidingWindow {
 	}
 	
 	public static void workTheExample(int[] inputArray, solutionOptions option, int windowSize) {
-		printInputArray(inputArray);
+		PrintSupport.printArray(inputArray);
 		
 		switch(option) {
 			case bruteForce:

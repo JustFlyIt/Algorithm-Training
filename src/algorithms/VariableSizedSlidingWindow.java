@@ -3,20 +3,11 @@ package algorithms;
 import java.util.HashMap;
 import java.util.Map;
 
+import util.PrintSupport;
+
 public class VariableSizedSlidingWindow {
 	
 	public enum solutionOptions { simple, mapping };
-	
-	public static void printInputArray(int[] inputArray) {
-		for (int i=0; i<inputArray.length; i++) {
-			if (i==0)
-				System.out.print("Input Array: " + inputArray[i]);
-			else
-				System.out.print(", " + inputArray[i]);
-		}
-		
-		System.out.println();
-	}
 	
 	public static int simpleVariableSlidingWindow(int[] input, int target) {
 		// O(n)
@@ -66,7 +57,7 @@ public class VariableSizedSlidingWindow {
 	
 	public static void workTheExample(int[] inputArray, solutionOptions option) {
 		
-		printInputArray(inputArray);
+		PrintSupport.printArray(inputArray);
 		
 		switch(option) {
 			case simple:
