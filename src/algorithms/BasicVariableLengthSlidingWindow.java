@@ -89,7 +89,6 @@ public class BasicVariableLengthSlidingWindow {
 		//int[] input = { 1, 2, 3, 5, 5, 5};
 		//int[] input = { 1, 2, 3, 4, 5, 6};
 		
-		
 		switch(x) {
 			case 1:
 				PrintSupport.printArray(inputNum);
