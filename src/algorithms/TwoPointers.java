@@ -59,31 +59,50 @@ public class TwoPointers {
 		return new int[] {++L, ++R};
 	}
 	
-	public static void main(String[] args) {
-		String inputString = "A man, a plan, a canal: Panama11";
-		//String inputString = "AABBBBAA";
-		//int inputInArray[] = {1, 2, 3, 3, 4, 6, 8};
-		//int target = 11;
-		int inputInArray[] = {2, 7, 11, 35};
-		int target = 9;
-		int ans[] = {-1, -1};
+	public static int[] removeDuplicatesFromSortedArray(int[] inputNumbers) {
+		// O(n)
+		/* 	Constraints
+		 * 	1 <= nums.length <= 3 * 104
+		 * -100 <= inputNumbers[i] <= 100
+		 * inputNumbers is sorted in non-decreasing order.
+		*/
 		
+		int L = 0;
+		int R = inputNumbers.length - 1;
+		
+		while (L < R) {
+		}
+			   
+		return new int[] {++L, ++R};
+	}
+	
+	public static void main(String[] args) {
 		int x = 2;
 		
 		switch(x) {
-		case 1:
-			System.out.println("Input string: " + inputString);
-			System.out.println("Is the input a palindrome: " + validPalindrome(inputString));
-			break;
-		case 2:
-			PrintSupport.printArray(inputInArray);
-			ans = twoSumII_InputArrayIsSorted(inputInArray, target);
-			System.out.println("Has the target (" + target + ") sum indices: L - " + ans[0] + "  R - " + ans[1]);
-			twoSumII_InputArrayIsSorted(inputInArray, target);
-			break;
-		default:
-			System.out.println("Valid Solution Not Specified");
-			return;
+			case 1:
+				String inputString = "A man, a plan, a canal: Panama11";
+				System.out.println("Input string: " + inputString);
+				System.out.println("Is the input a palindrome: " + validPalindrome(inputString));
+				break;
+			case 2:
+				int inputInArray[] = {1, 2, 3, 3, 4, 6, 8};
+				int target = 11;
+				int ans[] = {-1, -1};
+				
+				PrintSupport.printArray(inputInArray);
+				ans = twoSumII_InputArrayIsSorted(inputInArray, target);
+				System.out.println("Has the target (" + target + ") sum indices: L - " + ans[0] + "  R - " + ans[1]);
+				twoSumII_InputArrayIsSorted(inputInArray, target);
+				break;
+			case 3:
+				int inputWithDuplicatesy[] = {2, 7, 7, 11, 35, 35};
+				PrintSupport.printArray(inputWithDuplicatesy);
+				System.out.println("String with duplicates removed: " + removeDuplicatesFromSortedArray(inputWithDuplicatesy));
+				break;
+			default:
+				System.out.println("Valid Solution Not Specified");
+				return;
 		}
 	}
 }
