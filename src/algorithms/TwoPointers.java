@@ -115,7 +115,7 @@ public class TwoPointers {
 					L++;
 				} else {
 					twoTries = 2;
-					L++;
+					L = R;
 				}
 			} else {
 				inputNumbers[L] = inputNumbers[R];
