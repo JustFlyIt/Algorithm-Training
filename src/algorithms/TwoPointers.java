@@ -1,8 +1,5 @@
 package algorithms;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import util.PrintSupport;
 
 public class TwoPointers {
@@ -59,7 +56,7 @@ public class TwoPointers {
 		return new int[] {++L, ++R};
 	}
 	
-	public static int[] removeDuplicatesFromSortedArray(int[] inputNumbers) {
+	public static int removeDuplicatesFromSortedArray(int[] inputNumbers) {
 		// O(n)
 		/* 	Constraints
 		 * 	1 <= nums.length <= 3 * 104
@@ -68,16 +65,83 @@ public class TwoPointers {
 		*/
 		
 		int L = 0;
-		int R = inputNumbers.length - 1;
+		int R = 0;
+		int numberOfElements = inputNumbers.length - 1;
+		int numberUnique = 1;
 		
-		while (L < R) {
+		while (true) {
+			if (!(inputNumbers[L] == inputNumbers[R])) {
+				System.out.print(inputNumbers[L] + "  ");
+				inputNumbers[++L] = inputNumbers[R];
+				numberUnique++;
+			}
+			
+			R++;
+			
+			if (R > numberOfElements) { 
+				// Print the last unique value
+				System.out.print(inputNumbers[L] + "  ");
+				while (L < numberOfElements) {
+					inputNumbers[++L] = '_';
+					System.out.print("_ ");
+				}
+			
+				break;
+			}
 		}
-			   
-		return new int[] {++L, ++R};
+		
+		return numberUnique;
+	}
+	
+	public static int removeDuplicatesFromSortedArrayII(int[] inputNumbers) {
+		// O(n)
+		/* 	Constraints
+		 * 	1 <= nums.length <= 3 * 104
+		 * -100 <= inputNumbers[i] <= 100
+		 * inputNumbers is sorted in non-decreasing order.
+		*/
+		
+		int L = 0;
+		int R = 0;
+		int numberOfElements = inputNumbers.length;
+		int numberUnique = 0;
+		int twoTries = 2;
+		
+		while (true) {
+			if (inputNumbers[L] == inputNumbers[R]) {
+				if (twoTries != 0) {
+					numberUnique++;
+					twoTries--;
+					L++;
+				} else {
+					twoTries = 2;
+					L++;
+				}
+			} else {
+				inputNumbers[L] = inputNumbers[R];
+				L++;
+				numberUnique++;
+				twoTries--;
+			}
+			
+			R++;
+			
+			if (R == numberOfElements) { 
+				while (L <= numberOfElements-1) {
+					inputNumbers[L++] = -1;
+				}
+			
+				break;
+			}
+		}
+		
+		PrintSupport.printArray(inputNumbers);
+		
+		return numberUnique;
 	}
 	
 	public static void main(String[] args) {
-		int x = 2;
+		int x = 4;
 		
 		switch(x) {
 			case 1:
@@ -96,9 +160,22 @@ public class TwoPointers {
 				twoSumII_InputArrayIsSorted(inputInArray, target);
 				break;
 			case 3:
-				int inputWithDuplicatesy[] = {2, 7, 7, 11, 35, 35};
-				PrintSupport.printArray(inputWithDuplicatesy);
-				System.out.println("String with duplicates removed: " + removeDuplicatesFromSortedArray(inputWithDuplicatesy));
+				int inputWithDuplicates[] = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+				System.out.print("Input - ");
+				PrintSupport.printArray(inputWithDuplicates);
+				System.out.print("String with duplicates removed: ");
+				int numberUnique = removeDuplicatesFromSortedArray(inputWithDuplicates);
+				System.out.println("\nNumber unique: " + numberUnique);
+				break;
+			case 4:
+				//int inputWithDuplicatesII[] = {0, 0, 0, 1, 1, 1, 2, 3, 3};
+				int inputWithDuplicatesII[] = {1, 1, 1};
+				//int inputWithDuplicatesII[] = {1, 2, 2};
+				System.out.print("Input - ");
+				PrintSupport.printArray(inputWithDuplicatesII);
+				System.out.print("String with duplicates (II) removed: ");
+				int numberUniqueII = removeDuplicatesFromSortedArrayII(inputWithDuplicatesII);
+				System.out.println("\nNumber unique II: " + numberUniqueII);
 				break;
 			default:
 				System.out.println("Valid Solution Not Specified");
