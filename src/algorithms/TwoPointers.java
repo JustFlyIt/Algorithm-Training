@@ -138,9 +138,10 @@ public class TwoPointers {
         int volume = 0;
 		int R = height.length - 1;
 		int L = 0;
-        int maxL = height[L], maxR = height[R];
+        int maxL = height[L], maxR = height[R];  // Important
 		 
 		while (L != R) {
+			// Shift of R and L is based on minimum max value
 			if (maxL < maxR) {
 				L++;
 				maxL = Math.max(maxL, height[L]);
