@@ -9,8 +9,7 @@ public class TwoPointers {
 		inputString = inputString.replaceAll("[^a-zA-Z0-9]", "");
 		inputString = inputString.toLowerCase();
 	    
-		int L = 0;
-		int R = inputString.length() - 1;
+		int L = 0, R = inputString.length() - 1;
 		char rightChar, leftChar;
 		
 		while (L < R) {
@@ -38,8 +37,7 @@ public class TwoPointers {
 		 * Tests are for exactly one solution
 		*/
 		
-		int L = 0;
-		int R = inputNumbers.length - 1;
+		int L = 0, R = inputNumbers.length - 1;
 		int currentSum = 0;
 		
 		while (L < R) {
@@ -97,8 +95,7 @@ public class TwoPointers {
 	}
 	
 	public static int ContainerWithMostWaterSlow(int[] height) {
-        int currentVolume = 0; 
-        int maxVolume = 0;
+        int currentVolume = 0, maxVolume = 0;
         int currentSide = 0;
         int length = height.length - 1;
 		
@@ -135,9 +132,31 @@ public class TwoPointers {
 
 		return maxVolume;		
 	}
+	
+	public static int TrappingRainWater(int[] height) {
+		// O(n)
+        int volume = 0;
+		int R = height.length - 1;
+		int L = 0;
+        int maxL = height[L], maxR = height[R];
+		 
+		while (L != R) {
+			if (maxL < maxR) {
+				L++;
+				maxL = Math.max(maxL, height[L]);
+				volume += maxL - height[L];
+			} else { 
+				R--;
+				maxR = Math.max(maxR, height[R]);
+				volume += maxR - height[R];
+			}
+		}
+
+		return volume;		
+	}
 
 	public static void main(String[] args) {
-		int x = 5;
+		int x = 6;
 		
 		switch(x) {
 			case 1:
@@ -183,6 +202,14 @@ public class TwoPointers {
 				PrintSupport.printArray(ratings);
 				int volume = ContainerWithMostWaterFast(ratings);
 				System.out.println("\nVolume: " + volume);
+				break;
+			case 6:
+				int height[] = {0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2 ,1};
+				//int height[] = {4, 2, 0, 3, 2, 5};
+				System.out.print("Height Input - ");
+				PrintSupport.printArray(height);
+				int bestVolume = TrappingRainWater(height);
+				System.out.println("\nBest Volume: " + bestVolume);
 				break;
 			default:
 				System.out.println("Valid Solution Not Specified");
