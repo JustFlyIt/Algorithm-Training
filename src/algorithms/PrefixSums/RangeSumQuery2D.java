@@ -18,7 +18,7 @@ public class RangeSumQuery2D {
 		
 		for (int r=0; r<rows; r++) {
 			prefix = 0;
-			for (int c=0; c<cols-1; c++) {
+			for (int c=0; c<cols; c++) {
 				prefix += nums[r][c];
 				above = numPrefixes[r][c+1];
 				numPrefixes[r+1][c+1]= prefix + above;
