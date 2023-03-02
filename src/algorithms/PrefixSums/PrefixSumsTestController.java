@@ -5,9 +5,9 @@ import util.PrintSupport;
 public class PrefixSumsTestController {
 
 	public static void main(String[] args) {
-		int x = 1;
+		int currentCase = 2;
 
-		switch (x) {
+		switch (currentCase) {
 		case 1:
 			int nums[] = { -2, 0, 3, -5, 2, -1 };
 			int left = 0;
@@ -25,11 +25,9 @@ public class PrefixSumsTestController {
 			int region2[] = {1, 1, 2, 2};
 			int region3[] = {1, 2, 2, 4};
 
-			//System.out.print("Input: "); 
-			//PrintSupport.printArray(nums);
-
 			RangeSumQuery2D obj = new RangeSumQuery2D(matrix);
-			//int matrixSum = obj.sumRange(left, right);
+			int matrixSum = obj.sumRange(2, 1, 4, 3);
+			System.out.println("matrixSum = " +  matrixSum);
 			//System.out.println("The sum of the elements included in Left (" + left + ") and Right (" + right + ") equals - " + sum);
 			break;
 		case 3:

@@ -30,13 +30,16 @@ public class RangeSumQuery2D {
 
 	public int sumRange(int row1, int col1, int row2, int col2) {
 		
-		int total = 0;
-		//prefixIntRight = numPrefixes[right];
-		//t prefixIntLeft = 0;
+		row1++;
+		row2++;
+		col1++;
+		col2++;
 		
-		// (left > 0)
-			//efixIntLeft = numPrefixes[left-1];
+		int bottomRight = numPrefixes[row2][col2];
+		int above = numPrefixes[row1 - 1][col2];
+		int left = numPrefixes[row2][col1 - 1];
+		int topLeft = numPrefixes[row1 - 1][col1 - 1]; 
 		
-		return 0; //fixIntRight - prefixIntLeft;
+		return bottomRight - above - left + topLeft;
 	}
 }
