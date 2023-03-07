@@ -1,5 +1,8 @@
 package algorithms;
 
+// Basic sliding window example...run at main by selecting the input and the
+// case of the test as presented in workTheExample
+
 import java.util.HashMap;
 import java.util.Map;
 
